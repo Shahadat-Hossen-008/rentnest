@@ -1,3 +1,0 @@
-CORS_ORIGIN=*
-
-PORT = 3000

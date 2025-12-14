@@ -37,7 +37,13 @@ const userSchema = new mongoose.Schema({
     },
     refreshToken: {
         type: String
-    }
+    },
+    isVerfied:{
+        type: Boolean,
+        default: false
+    }, 
+     otpCode: String, 
+    expiredOtp: Date
 }, {timestamps: true})
 
 //hash password in save time
@@ -54,5 +60,5 @@ userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password)
 }
 
-const Users = mongoose.model('Users', userSchema)
-export default Users
+const User = mongoose.model('User', userSchema)
+export default User;
