@@ -33,14 +33,7 @@ const userSchema = new mongoose.Schema({
     refreshToken: {
         type: String
     }
-    },
-    isVerified:{
-        type: Boolean,
-        default: false
-    }, 
-    otpCode: String, 
-    expiredOtp: Date
-}, {timestamps: true})
+    }, {timestamps: true})
 
 //hash password in save time
 // userSchema.pre('save', async function () {
